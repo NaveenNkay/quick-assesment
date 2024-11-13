@@ -4,7 +4,7 @@ pipeline {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('GCP-SA') // Use credentials stored in Jenkins
         PROJECT_ID = 'quick-assesment'  // GCP Project ID
         REGION = 'asia-east-1'  // GCP Region
-	GIT_TOKEN = credentials('git-token')
+        GIT_CREDENTIALS = credentials('git-token')
     }
     stages {
         stage('Checkout') {
