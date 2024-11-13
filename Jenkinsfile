@@ -44,25 +44,4 @@ pipeline {
                 }
             }
         }
-        stage('Terraform Apply') {
-            steps {
-                script {
-                    // Apply Terraform changes (auto-approve for automation)
-                    sh 'terraform apply -auto-approve tfplan'
-                }
-            }
-        }
     }
-    post {
-        always {
-            // Clean up workspace after build
-            cleanWs()
-        }
-        success {
-            echo 'Terraform was applied successfully on GCP!'
-        }
-        failure {
-            echo 'Terraform apply failed.'
-        }
-    }
-}
