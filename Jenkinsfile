@@ -2,15 +2,13 @@ pipeline {
     agent any
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('GCP-SA') // Use credentials stored in Jenkins
-        PROJECT_ID = 'quick-assesment'  // GCP Project ID
-        REGION = 'asia-east-1'  // GCP Region
-        GIT_CREDENTIALS = credentials('git-token')
+        GIT_TOKEN = credentials('git-token')
     }
     stages {
         stage('Checkout') {
             steps {
                 // Checkout code from the Git repository
-                git branch: 'main', url: 'https://($GIT_CREDENTIALS)@github.com/NaveenNkay/quick-assesment.git'
+                git "https://($GIT_TOKEN)@github.com/NaveenNkay/quick-assesment.git"
             }
         }
         stage('Terraform Init') {
