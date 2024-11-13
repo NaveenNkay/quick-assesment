@@ -8,7 +8,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from the Git repository
-                git "https://($GIT_TOKEN)@github.com/NaveenNkay/quick-assesment.git"
+                git "https://github.com/NaveenNkay/quick-assesment.git"
+		 credentialsId: 'git-token'
             }
         }
         stage('Terraform Init') {
