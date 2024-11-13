@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from the Git repository
-                git branch: 'main', url: 'https://github.com/NaveenNkay/quick-assesment.git'
+                git branch: 'main', url: 'https://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@github.com/NaveenNkay/quick-assesment.git'
             }
         }
         stage('Terraform Init') {
