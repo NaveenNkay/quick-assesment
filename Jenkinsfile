@@ -8,7 +8,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from the Git repository
-                git "https://github.com/NaveenNkay/quick-assesment.git"
+                git "https://github.com/NaveenNkay/quick-assesment.git", 
 		 credentialsId: 'git-token'
             }
         }
